@@ -10,6 +10,9 @@ import AuthContextProvider from './Context/AuthContext'
 import PostGuard from './components/Guards/PostGuard'
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import PostDetails from './pages/PostDetails/PostDetails'
+import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Notifications from './pages/Notifications/Notifications'
+import FollowSuggestions from './pages/FollowSuggestions/FollowSuggestions'
 
 
 
@@ -26,7 +29,9 @@ const router = createBrowserRouter([
     {path:'register',element:<AuthGuard><Register/></AuthGuard> },
     {path:'profile',element:<PostGuard><Profile/></PostGuard> },
     {path:'details/:id',element:<PostGuard><PostDetails/></PostGuard> },
-
+    {path:'changePassword',element:<PostGuard><ChangePassword/></PostGuard> },
+    {path:'notifications',element:<PostGuard><Notifications/></PostGuard> },
+    {path:'followSuggestions',element:<PostGuard><FollowSuggestions/></PostGuard> },
   ]}
 ])
 

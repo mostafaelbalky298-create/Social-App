@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import CommentsCard from '../../components/CommentsCard/CommentsCard';
 import Swal from "sweetalert2";
 import { AppNav } from '../../components/Navbar/Navbar'
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   const { userData, setUserData } = useContext(AuthContext)
@@ -710,14 +711,18 @@ export default function Profile() {
 
                 {/* Stats Grid */}
                 <div className="profile-stats-grid">
+                  <Link to='/followSuggestions'>
                   <div className="profile-stat-item">
                     <div className="profile-stat-label">Followers</div>
                     <div className="profile-stat-value">{userData?.followersCount || 0}</div>
                   </div>
+                  </Link>
+                  <Link to='/followSuggestions'>
                   <div className="profile-stat-item">
                     <div className="profile-stat-label">Following</div>
                     <div className="profile-stat-value">{userData?.followingCount || 0}</div>
                   </div>
+                  </Link>
                   <div className="profile-stat-item">
                     <div className="profile-stat-label">Bookmarks</div>
                     <div className="profile-stat-value">{userData?.bookmarksCount || 0}</div>
